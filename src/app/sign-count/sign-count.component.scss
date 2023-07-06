@@ -1,0 +1,235 @@
+.container{
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    min-height: 80vh;
+    min-width: auto;
+    border-radius: 5px;
+    margin: 8% 20% 10% 20%;
+    padding-top: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+
+.uploader{
+    margin-top: 5%;
+    padding: 10px;
+    margin: 8% 20% 0 20%;
+    border-radius: 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -5px -5px 9px rgba(255,255,255,0.8), 5px 5px 9px rgba(94,104,121,0.8);
+}
+
+.uploadButton{
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    color: lightseagreen;
+    cursor:pointer;
+    font-size: medium;
+    background: transparent;
+}
+
+.uploadButton:hover{
+  color: white;
+  background: lightseagreen;
+}
+
+.resetButton:hover{
+  color: white;
+  background: darkred;
+}
+.resetButton{
+  border-radius: 5px;
+  border: none;
+  color: darkred;
+  font-weight: bold;
+  cursor:pointer;
+  font-size: medium;
+  background: transparent;
+}
+
+input[type="file"]::file-selector-button {
+    border: 2px solid lightseagreen;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 1s;
+    background-color:  lightseagreen;
+    color: white;
+  }
+  
+  input[type="file"]::file-selector-button:hover {
+    cursor: pointer;
+    
+  }
+
+  button{
+    border-radius: 5px;
+  }
+
+  
+  .signature-container{
+    margin: 8% 20% 0 20%;
+    border-radius: 10px;
+    min-height: 20vh;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -5px -5px 9px rgba(255,255,255,0.8), 5px 5px 9px rgba(94,104,121,0.8);
+  }
+  
+ .signature-container h4{
+  padding:10px;
+  color: white;
+  font-weight: bold;
+ }
+
+ .progressbar{
+  margin: 8% 20% 0 20%;
+ }
+
+ .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 80px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+}
+ 
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+ 
+.header:hover::before {
+  left: 100%;
+}
+ .header img{
+  width: 10%;
+  margin-left: 180px;
+  position: relative;
+ }
+
+ 
+.navbar a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  margin-left: 540px;
+  transition: 0.3s;
+  position: relative;
+}
+ 
+.navbar a:hover {
+  color: yellowgreen;
+}
+ 
+
+ 
+/* BREAKPOINTS */
+// @media (max-width: 992px) {
+//   .header {
+//     padding: 1.25rem 4%;
+//   }
+// }
+ 
+// @media (max-width: 768px) {
+//   .navbar {
+//     position: fixed;
+//     top: 100%;
+//     left: 0;
+//     width: 100%;
+//     padding: 0.5rem 4%;
+//     display: flex;
+//   }
+ 
+//   .navbar.active {
+//     display: block;
+//   }
+ 
+//   .navbar a {
+//     display: block;
+//     margin: 0.5rem 0;
+//   }
+ 
+//   .nav-bg {
+//     position: absolute;
+//     top: 79px;
+//     left: 0;
+//     width: 100%;
+//     height: 295px;
+//     background: rgba(255, 255, 255, 0.1);
+//     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+//     backdrop-filter: blur(10px);
+//     z-index: 99;
+//     display: none;
+//   }
+ 
+//   .nav-bg.active {
+//     display: block;
+//   }
+// }
+
+h2 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+h2 span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.3;
+}
+h2 em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.signatureHeader h2 {
+  text-align: center;
+  padding-bottom: 0.7em;
+}
+.signatureHeader h2 span {
+  font-weight: 300;
+  word-spacing: 3px;
+  line-height: 2em;
+  padding-bottom: 0.35em;
+  color: rgba(0, 0, 0, 0.5);
+}
+.signatureHeader h2:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 1px;
+  content: "";
+  left: 50%;
+  margin-left: -30px;
+  background-color: #777;
+}

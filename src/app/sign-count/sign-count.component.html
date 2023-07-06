@@ -1,0 +1,60 @@
+<header class="header">
+    <img src="https://acxtech.co.in/assets/images/logo-2.png" style="text-align: left;">
+    <nav class="navbar">
+        <a routerLink="/login">Logout <i class='bx bx-run bx-flashing'
+                style="font-size: 1em; color: yellowgreen;"></i></a>
+
+    </nav>
+</header>
+<div class="nav-bg"></div>
+
+<div class="container">
+    <div class="signatureHeader">
+        <h2> <em>Signature Count Details</em> </h2>
+    </div>
+    
+    <div class="uploader">
+        <input #fileUploader class="form-control" type="file" (change)="onFileSelected($event)">
+        <button 
+            matTooltip="Please click the upload button once your file is selected to get things into action."
+            matTooltipPosition="above" aria-label="Button that displays a tooltip when focused or hovered over"
+            type="button" class="uploadButton" (click)="fileUploadHandler()"> Upload</button>
+
+        <button  matTooltip="Click to Remove your file selection" matTooltipPosition="right"
+            aria-label="Button that displays a tooltip when focused or hovered over" type="button" class="resetButton"
+            (click)="resetFileUploader()">Reset</button>
+    </div>
+
+    <div *ngIf="selectedFile && remainingCounter > 0">
+        <p style="color: red; font-size: small;">** {{remainingCounter}} Uploads Remaining **</p>
+    </div>
+
+    <div *ngIf="selectedFile && remainingCounter === 0">
+        <p style="color: red; font-size: small;">** You have completed your upload limit. **</p>
+    </div>
+
+    <div class="progressbar">
+        <span *ngIf="loader"
+            style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Loading.
+            Please Wait...</span>
+        <mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <div class="signature-container"
+        *ngIf="signatureResult && signatureResult?.result && signatureResult?.status === 'P'; else invalidFileType">
+        <h4 style="color: black; text-decoration: underline;">Extracted Details</h4>
+        <div *ngFor="let item of signatureResult.result">
+            <span style="color: black; font-weight: bold;">Page No {{ item.page_no }} &nbsp; : &nbsp;{{
+                item.sign_count}} &nbsp; Signatures
+                Detected</span><br><br>
+        </div>
+    </div><br><br>
+    <ng-template #invalidFileType>
+        <div class="signature-container" *ngIf="signatureResult">
+            <h4 style="color: black; text-decoration: underline;">Extracted Details</h4>
+            <div>
+                <span style="color: black; font-weight: bold;">{{ signatureResult.result}}</span><br><br>
+            </div>
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,22 @@
+
+<div class="box">
+    <div class="container">
+        <div class="top">
+            <header>Sign In</header>
+        </div><br>
+        <div class="input-field">
+            <input type="email" class="input" placeholder="Email" id="email" [(ngModel)]="email"
+                [ngModelOptions]="{standalone: true}">
+            <i class="bx bx-user"></i>
+        </div><br>
+        <div class="input-field">
+            <input type="Password" class="input" placeholder="Password" id="password-field" [(ngModel)]="password"
+                [ngModelOptions]="{standalone: true}" (keyup)="handleKeyUp($event)">
+            <i class='bx bxs-lock'></i>
+        </div><br>
+        <div class="input-field">
+            <button class="submit" (click)="onSubmit()">Login</button>
+        </div><br>
+        <span style="color: black; font-weight: bold;">Forgot Password?</span>	
+    </div>
+</div>
