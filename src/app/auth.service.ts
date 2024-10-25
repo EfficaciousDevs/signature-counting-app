@@ -12,7 +12,7 @@ export class AuthService {
   authorizationStatus: boolean = false;
   uploadLimit: number = 0;
 
-  
+
   constructor(private httpService: HttpClient, private snackBar: MatSnackBar, private routerService: Router) { }
 
   authenticate(email: string, password: string) {
@@ -20,6 +20,7 @@ export class AuthService {
       email: email,
       password: password
     };
+    // tslint:disable-next-line:max-line-length
     // this.httpService.post('http://52.172.252.7:8080/Signature-Counting/api/v1/authenticate/login', this.userDetails,{responseType: 'text'})
     this.httpService.post('http://localhost:8086/api/v1/authenticate/login', this.userDetails,{responseType: 'text'})
     .subscribe((response: any) => {
@@ -31,7 +32,7 @@ export class AuthService {
             this.snackBar.dismiss();
             this.routerService.navigateByUrl('/signature-details');
           },1000);
-          
+
         }else{
           this.snackBar.open("Invalid Credentials. Please try again.",'close');
 
@@ -40,7 +41,7 @@ export class AuthService {
         },2000);
         }
       });
-  
+
   }
 
   checkCount(): Observable<any>{
